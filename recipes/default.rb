@@ -23,5 +23,4 @@ apt_repository 'docker' do
   components %w(main)
 end
 
-package node['docker']['kernel_modules_package']
 package 'lxc-docker'
