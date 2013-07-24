@@ -17,8 +17,9 @@
 # limitations under the License.
 #
 
-apt_repository 'docker' do
+apt_repository cookbook_name.to_s do
   uri node['docker']['apt_repository_uri']
+  key node['docker']['apt_repository_key']
   distribution node['lsb']['codename']
   components %w(main)
 end
