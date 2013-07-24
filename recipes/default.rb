@@ -26,7 +26,7 @@ apt_repository cookbook_name.to_s do
 end
 
 unless node['kernel']['release'] =~ /3.8/
-  %w(linux-image-generic-lts-raring linux-headers-generic-lts-raring)
+  %w(linux-headers-generic-lts-raring linux-image-generic-lts-raring)
     .each do |kernel_package|
     package kernel_package
   end
