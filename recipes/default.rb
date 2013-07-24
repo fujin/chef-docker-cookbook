@@ -17,13 +17,10 @@
 # limitations under the License.
 #
 
-case node['platform']
-when 'ubuntu'
-  apt_repository 'docker' do
-    uri node['docker']['package']['apt_repository_uri']
-    distribution node['lsb']['codename']
-    components %w(main)
-  end
+apt_repository 'docker' do
+  uri node['docker']['package']['apt_repository_uri']
+  distribution node['lsb']['codename']
+  components %w(main)
 end
 
 package node['docker']['kernel_modules_package']
